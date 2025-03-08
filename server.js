@@ -12,12 +12,16 @@ const env = require("dotenv").config();
 const app = express();
 const static = require("./routes/static");
 
+
+
 /* ***********************
  * Routes
  *************************/
 app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.set("layout", "./layouts/layout"); // not at views root
+
+
 
 app.use(static);
 
