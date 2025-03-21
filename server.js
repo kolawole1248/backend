@@ -7,6 +7,7 @@
  * Require Statements
  *************************/
 const express = require("express");
+const baseController = require("./controllers/baseController")
 const expressLayouts = require("express-ejs-layouts");
 const env = require("dotenv").config();
 const app = express();
@@ -26,10 +27,7 @@ app.set("layout", "./layouts/layout"); // not at views root
 app.use(static);
 
 // Index Route
-app.get("/", function (req, res) {
-  res.render("index", { title: "Home" });
-});
-
+app.get("/", baseController.buildHome);
 /* ***********************
  * Local Server Information
  * Values from .env (environment) file
